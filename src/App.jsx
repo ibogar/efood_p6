@@ -1,12 +1,11 @@
 import { useState } from "react"
+import Header from "./components/Header"
+import { GlobalCss } from "./styles"
 
 const App = () => (
     <>
-      <div>
-        <p>
-          Click on the Vite and React logos to learn more
-        </p>
-      </div>
+      <GlobalCss />
+      <Header />
 
 
     </>
