@@ -11,6 +11,7 @@ export const HeaderContainer = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 80px;
 `
 export const Title = styled.p`
     font-size: 36px;

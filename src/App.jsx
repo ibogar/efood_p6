@@ -1,13 +1,12 @@
-import { useState } from "react"
 import Header from "./components/Header"
+import RestaurantsList from "./components/RestaurantsList"
 import { GlobalCss } from "./styles"
 
 const App = () => (
     <>
       <GlobalCss />
       <Header />
-
-
+      <RestaurantsList />
     </>
   )
 
