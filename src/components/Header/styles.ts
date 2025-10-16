@@ -1,20 +1,55 @@
 import styled from "styled-components";
 
 import vector from '../../assets/images/vector.png';
+import italian from '../../assets/images/italian.png';
+import { colors } from "../../styles";
 
-export const HeaderContainer = styled.div`
+interface HeaderProps {
+    path: string
+}
+
+export const Container = styled.div<HeaderProps>`
     width: 100%;
-    height: 380px;
+    height: ${({path}) => (path === '/' ? '380px' : '186px')};
     background-image: url(${vector});
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: ${({path}) => (path === '/' ? 'column' : 'row')};
+    justify-content: ${({path}) => (path === '/' ? 'center' : 'space-between')};
     align-items: center;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: ${({path}) => (path === '/' ? '80px' : '0px')};
+    padding: 0 168px;
 `
-export const Title = styled.p`
-    font-size: 36px;
+export const Text = styled.p<HeaderProps>`
+    font-size: ${({path}) => (path === '/' ? '36px' : '18px')};
     font-weight: bold;
-    margin-top: 140px
+    margin-top: ${({path}) => (path === '/' ? '140px' : '0px')};
+`
+
+export const Hero = styled.div`
+    width: 100%;
+    height: 280px;
+    background-image: url(${italian});
+    background-size: cover;
+    margin-bottom: 56px;
+    background-position: center;
+    color: ${colors.white}
+`
+
+export const BackgroundMask = styled.div`
+    width: 100%;
+    height: 280px;
+    background-color: rgba(0, 0, 0, 0.5)
+`
+
+export const RestaurantType = styled.p`
+    padding-top: 24px;
+    font-size: 32px;
+    font-weight: lighter;
+`
+
+export const RestaurantName = styled.h2`
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 156px;
 `
