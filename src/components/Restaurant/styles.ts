@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { colors } from "../../styles";
 
 export const Card = styled.div`
-    width: 472px;
     background-color: ${colors.white};
     color: ${colors.primary};
     border: 1px solid ${colors.primary};
@@ -38,8 +38,9 @@ const tagBtn = css`
     display: inline-block;
 `
 
-export const Button = styled.a`
+export const Button = styled(Link)`
     ${tagBtn};
+    text-decoration: none;
 `
 
 export const Tags = styled.div`

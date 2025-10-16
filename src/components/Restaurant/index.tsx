@@ -10,7 +10,7 @@ const Restaurant = () => (
             <S.Tag>Japonesa</S.Tag>
         </S.Tags>
         <S.CardContainer>
-            <S.Title className="titleContainer">
+            <S.Title>
                 <h3>Hioki Sushi</h3>
                 <h3>4.9 <img src={star}/></h3>
             </S.Title>
@@ -20,7 +20,7 @@ const Restaurant = () => (
                 Entrega rápida, embalagens cuidadosas e qualidade garantida.
                 Experimente o Japão sem sair do lar com nosso delivery!
             </S.Description>
-            <S.Button>Saiba mais</S.Button>
+            <S.Button to={'/profile'}>Saiba mais</S.Button>
         </S.CardContainer>
     </S.Card>
 
