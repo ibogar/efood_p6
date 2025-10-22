@@ -1,5 +1,14 @@
 import * as S from "./styles";
-import pizza from "../../assets/images/pizza.png"
+import pizza from "assets/images/pizza.png"
+
+export type ProductType = {
+    foto: string
+    preco: number
+    id: number
+    nome: string
+    descricao: string
+    porcao: string
+}
 
 const Product = () => (
     <S.Card>

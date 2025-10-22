@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
-import logopng from '../../assets/images/logo.png';
-import { Logo } from "../../styles";
+import logopng from "assets/images/logo.png";
+import { Logo } from "@/styles";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {

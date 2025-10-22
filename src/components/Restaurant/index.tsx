@@ -1,29 +1,32 @@
 import * as S from "./styles";
-import japanese from "../../assets/images/japanese.png"
-import star from "../../assets/images/star.png"
+import star from "assets/images/star.png"
 
 type Props = {
-    name: string
-    score: string
-    description: string
-    image: string
-    tags: string[]
+    id: number
+    titulo: string
+    destacado: boolean
+    tipo: string
+    avaliacao: number
+    descricao: string
+    capa: string
+    cardapio: ProductType[]
 }
 
-const Restaurant = ({ name, score, description, image, tags}: Props) => (
+const Restaurant = ({ id, titulo, destacado, tipo, avaliacao, descricao, capa, cardapio}: Props) => (
     <S.Card>
-        <S.Image src={image} />
+        <S.Image src={capa} />
         <S.Tags>
-            {tags.map((tag) => (
-                <S.Tag key={tag}>{tag}</S.Tag>    
-            ))}
+            {destacado && (
+                <S.Tag>Destaque da semana</S.Tag>
+            )}
+            <S.Tag>{tipo}</S.Tag>
         </S.Tags>
         <S.CardContainer>
             <S.Title>
-                <h3>{name}</h3>
-                <h3>{score} <img src={star}/></h3>
+                <h3>{titulo}</h3>
+                <h3>{avaliacao} <img src={star}/></h3>
             </S.Title>
-            <S.Description>{description}</S.Description>
+            <S.Description>{descricao}</S.Description>
             <S.Button to={'/profile'}>Saiba mais</S.Button>
         </S.CardContainer>
     </S.Card>
