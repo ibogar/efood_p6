@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 const App = () => (
     <BrowserRouter>
       <GlobalCss />
-      <Header />
       <MyRoutes />
       <Footer />
     </BrowserRouter>

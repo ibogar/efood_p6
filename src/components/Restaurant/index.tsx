@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import star from "assets/images/star.png"
 
-type Props = {
+interface Props {
     id: number
     titulo: string
     destacado: boolean
@@ -9,28 +9,36 @@ type Props = {
     avaliacao: number
     descricao: string
     capa: string
-    cardapio: ProductType[]
 }
 
-const Restaurant = ({ id, titulo, destacado, tipo, avaliacao, descricao, capa, cardapio}: Props) => (
-    <S.Card>
-        <S.Image src={capa} />
-        <S.Tags>
-            {destacado && (
-                <S.Tag>Destaque da semana</S.Tag>
-            )}
-            <S.Tag>{tipo}</S.Tag>
-        </S.Tags>
-        <S.CardContainer>
-            <S.Title>
-                <h3>{titulo}</h3>
-                <h3>{avaliacao} <img src={star}/></h3>
-            </S.Title>
-            <S.Description>{descricao}</S.Description>
-            <S.Button to={'/profile'}>Saiba mais</S.Button>
-        </S.CardContainer>
-    </S.Card>
+const Restaurant = ({ id, titulo, destacado, tipo, avaliacao, descricao, capa}: Props) => {
 
-)
+    const setDescription = (description: string) => {
+        if (description.length > 283) {
+            return description.slice(0, 280) + '...'
+        }
+        return description
+    }
+
+    return (
+        <S.Card>
+            <S.Image src={capa} />
+            <S.Tags>
+                {destacado && (
+                    <S.Tag>Destaque da semana</S.Tag>
+                )}
+                <S.Tag>{tipo}</S.Tag>
+            </S.Tags>
+            <S.CardContainer>
+                <S.Title>
+                    <h3>{titulo}</h3>
+                    <h3>{avaliacao} <img src={star}/></h3>
+                </S.Title>
+                <S.Description>{setDescription(descricao)}</S.Description>
+                <S.Button to={`/profile/${id}`}>Saiba mais</S.Button>
+            </S.CardContainer>
+        </S.Card>
+    )
+}
 
 export default Restaurant

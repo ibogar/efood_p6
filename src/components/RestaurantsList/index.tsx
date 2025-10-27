@@ -2,7 +2,7 @@ import Restaurant from "components/Restaurant";
 import { List } from "./styles";
 import { RestaurantType } from "pages/Home";
 
-type Props = {
+interface Props {
     restaurants: RestaurantType[]
 }
 
@@ -19,7 +19,6 @@ const RestaurantsList = ({ restaurants }: Props) => (
                     avaliacao={restaurant.avaliacao}
                     descricao={restaurant.descricao}
                     capa={restaurant.capa}
-                    cardapio={restaurant.cardapio}
                 />
             ))}
         </List>

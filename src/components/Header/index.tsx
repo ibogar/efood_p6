@@ -4,30 +4,38 @@ import logopng from "assets/images/logo.png";
 import { Logo } from "@/styles";
 import { useLocation } from "react-router-dom";
 
-const Header = () => {
+import italian from '../../assets/images/italian.png';
+
+interface Props {
+    capa?: string
+    tipo?: string
+    titulo?: string
+}
+
+const Header = ({ capa, tipo, titulo}: Props) => {
     const location = useLocation();
     const path = location.pathname;
 
     if (location.pathname === '/') {
         return (
-            <S.Container path={path}>
+            <S.Container $path={path}>
                 <Logo src={logopng}></Logo>
-                <S.Text path={path}>Viva experiências gastronômicas <br/> no conforto da sua casa</S.Text>
+                <S.Text $path={path}>Viva experiências gastronômicas <br/> no conforto da sua casa</S.Text>
             </S.Container>
         ) 
     } else {
         return (
             <>
-                <S.Container path={path}>
-                    <S.Text path={path}>Restaurantes</S.Text>
+                <S.Container $path={path}>
+                    <S.Text $path={path}>Restaurantes</S.Text>
                     <Logo src={logopng}></Logo>
-                    <S.Text path={path}>0 produto(s) no carrinho</S.Text>
+                    <S.Text $path={path}>0 produto(s) no carrinho</S.Text>
                 </S.Container>
-                <S.Hero>
+                <S.Hero style={{backgroundImage: `url(${capa})`}}>
                     <S.BackgroundMask>
                         <div className="container">
-                            <S.RestaurantType>Italiana</S.RestaurantType>
-                            <S.RestaurantName>La Dolce Vita Trattoria</S.RestaurantName>
+                            <S.RestaurantType>{tipo}</S.RestaurantType>
+                            <S.RestaurantName>{titulo}</S.RestaurantName>
                         </div>
                     </S.BackgroundMask>
                 </S.Hero>

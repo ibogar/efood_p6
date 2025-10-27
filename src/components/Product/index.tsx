@@ -1,28 +1,31 @@
 import * as S from "./styles";
 import pizza from "assets/images/pizza.png"
 
-export type ProductType = {
-    foto: string
-    preco: number
-    id: number
+interface Props {
     nome: string
+    foto: string
     descricao: string
-    porcao: string
 }
 
-const Product = () => (
-    <S.Card>
-        <S.Image src={pizza} />
-        <S.Title>
-            <h3>Pizza Marguerita</h3>
-        </S.Title>
-        <S.Description>
-            A clássica Marguerita: molho de tomate suculento, mussarela derretida, 
-            manjericão fresco e um toque de azeite. Sabor e simplicidade!
-        </S.Description>
-        <S.Button>Adicionar ao carrinho</S.Button>
-    </S.Card>
+const Product = ({ nome, foto, descricao }: Props) => {
 
-)
+    const setDescription = (descricao: string) => {
+        if (descricao.length > 266) {
+            return descricao.slice(0, 263) + '...'
+        }
+        return descricao
+    }
+
+    return (
+        <S.Card>
+            <S.Image src={foto}/>
+            <S.Title>
+                <h3>{nome}</h3>
+            </S.Title>
+            <S.Description>{setDescription(descricao)}</S.Description>
+            <S.Button>Adicionar ao carrinho</S.Button>
+        </S.Card>
+    )
+}
 
 export default Product
