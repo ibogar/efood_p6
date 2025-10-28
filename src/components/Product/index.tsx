@@ -5,6 +5,7 @@ interface Props {
     nome: string
     foto: string
     descricao: string
+    onClick?: () => void
 }
 
 const Product = ({ nome, foto, descricao }: Props) => {
@@ -23,7 +24,7 @@ const Product = ({ nome, foto, descricao }: Props) => {
                 <h3>{nome}</h3>
             </S.Title>
             <S.Description>{setDescription(descricao)}</S.Description>
-            <S.Button>Adicionar ao carrinho</S.Button>
+            <S.Button>Mais detalhes</S.Button>
         </S.Card>
     )
 }

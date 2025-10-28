@@ -6,9 +6,7 @@ export const Card = styled.div`
     color: ${colors.secondary};
     font-size: 14px;
     padding: 8px;
-`
-
-export const CardContainer = styled.div`
+    cursor: pointer;
 `
 
 export const Image = styled.img`
