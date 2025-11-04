@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import RestaurantsList from "components/RestaurantsList";
 import Header from "@/components/Header";
 

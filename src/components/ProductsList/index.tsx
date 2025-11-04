@@ -2,9 +2,11 @@ import Product from "../Product";
 import { List, ModalButton, ModalCLose, ModalContainer, ModalContent, ModalDescription, ModalImage, ModalTitle } from "./styles";
 import { ProductType } from "@/pages/Home";
 
-import pizza from "../../assets/images/pizza.png"
 import closeBtn from "../../assets/images/close.png"
 import { useState } from "react";
+import formatPrice from "@/utils/formatPrice";
+import { useDispatch } from "react-redux";
+import { add, open } from "@/store/reducers/cart";
 
 interface Props {
     menu: ProductType[]
@@ -30,12 +32,12 @@ const ProductsList = ({ menu }: Props) => {
         })
     }
 
-    const formatPrice = (price = 0) => {
-        return new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        }).format(price)
-        }
+    const dispatch = useDispatch()
+    const addToCart = (product: ProductType) => {
+        dispatch(add(product))
+        dispatch(open())
+        closeModal()
+    }
 
     return  (
         <div className="container">
@@ -69,7 +71,7 @@ const ProductsList = ({ menu }: Props) => {
 
                                 <p className="servings">Serve: {modal.porcao.length > 11? `de ${modal.porcao}` : `${modal.porcao}`} </p>
                             </ModalDescription>
-                            <ModalButton>Adicionar ao carrinho - {formatPrice(modal.preco)}</ModalButton>
+                            <ModalButton onClick={() => addToCart(modal)}>Adicionar ao carrinho - {formatPrice(modal.preco)}</ModalButton>
                         </div>
                     </ModalContent>
                     <div onClick={() => closeModal()} className="overlay"></div>

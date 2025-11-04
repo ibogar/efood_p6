@@ -4,7 +4,8 @@ export const colors = {
     primary: '#E66767',
     secondary: '#FFEBD9',
     terciary: '#FFF8F2',
-    white: '#FFF'
+    white: '#FFF',
+    overlay: 'rgba(0, 0, 0, 0.8)'
 }
 
 export const GlobalCss = createGlobalStyle`
