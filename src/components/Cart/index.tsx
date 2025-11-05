@@ -8,7 +8,7 @@ import formatPrice from "@/utils/formatPrice"
 
 const Cart = () => {
     const dispatch = useDispatch()
-    const { items, open } = useSelector((state: RootReducer) => state.cart)
+    const { items, isOpen } = useSelector((state: RootReducer) => state.cart)
 
     const sumPrices = () => {
 
@@ -20,7 +20,7 @@ const Cart = () => {
     }
 
     return (
-        <S.CartContainer className={open ? "open" : ""}>
+        <S.CartContainer className={isOpen ? "is-open" : ""}>
             <S.Overlay onClick={() => dispatch(close())}/>
             <S.CartSidebar>
                 <S.CartCLose onClick={() => dispatch(close())} src={closeBtn} />
@@ -39,7 +39,7 @@ const Cart = () => {
                     <p>Valor total</p>
                     <span>{sumPrices()}</span>
                 </S.TotalValue>
-                <S.FinishButton>Continuar com a entrega</S.FinishButton>
+                <S.FinishButton>Continuar para entrega</S.FinishButton>
             </S.CartSidebar>
         </S.CartContainer>
     )

@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction} from "@reduxjs/toolkit"
 
-import { ProductType } from "@/pages/Home"
 
 interface CartProduct extends ProductType {
     quantity: number
@@ -8,12 +7,12 @@ interface CartProduct extends ProductType {
 
 interface CartState {
     items: CartProduct[]
-    open: boolean
+    isOpen: boolean
 }
 
 const initialState: CartState = {
     items: [],
-    open: false
+    isOpen: false
 }
 
 const cartSlice = createSlice({
@@ -35,10 +34,10 @@ const cartSlice = createSlice({
             }
         },
         open: (state) => {
-            state.open = true
+            state.isOpen = true
         },
         close: (state) => {
-            state.open = false
+            state.isOpen = false
         },
         remove: (state, action: PayloadAction<number>) => {
 

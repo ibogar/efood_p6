@@ -1,10 +1,12 @@
-import * as S from "./styles";
-
-import logopng from "assets/images/logo.png";
-import { Logo } from "@/styles";
 import { useLocation } from "react-router-dom";
 
-import italian from '../../assets/images/italian.png';
+import logopng from "assets/images/logo.png";
+
+import * as S from "./styles";
+import { Logo } from "@/styles";
+import { useDispatch, useSelector } from "react-redux";
+import { RootReducer } from "@/store";
+import { open } from "@/store/reducers/cart";
 
 interface Props {
     capa?: string
@@ -15,6 +17,13 @@ interface Props {
 const Header = ({ capa, tipo, titulo}: Props) => {
     const location = useLocation();
     const path = location.pathname;
+
+    const dispatch = useDispatch()
+    const { items } = useSelector((state: RootReducer) => state.cart)
+
+    const sumQuantity = () => items.reduce((accumulator, currentValue) => {
+            return accumulator += currentValue.quantity
+        } , 0)
 
     if (location.pathname === '/') {
         return (
@@ -29,7 +38,15 @@ const Header = ({ capa, tipo, titulo}: Props) => {
                 <S.Container $path={path}>
                     <S.Text $path={path}>Restaurantes</S.Text>
                     <Logo src={logopng}></Logo>
-                    <S.Text $path={path}>0 produto(s) no carrinho</S.Text>
+                    <S.Text $path={path}>
+                        <span onClick={() => dispatch(open())}>
+                            {
+                                sumQuantity() === 0 ? "Nenhum produto no carrinho" 
+                                : sumQuantity() === 1 ? "1 produto no carrinho" 
+                                : `${sumQuantity()} produtos no carrinho`
+                            }
+                        </span>
+                    </S.Text>
                 </S.Container>
                 <S.Hero style={{backgroundImage: `url(${capa})`}}>
                     <S.BackgroundMask>

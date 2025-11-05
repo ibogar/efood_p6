@@ -1,4 +1,3 @@
-import { RestaurantType } from "@/pages/Home";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 

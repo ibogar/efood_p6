@@ -1,6 +1,5 @@
 import Product from "../Product";
 import { List, ModalButton, ModalCLose, ModalContainer, ModalContent, ModalDescription, ModalImage, ModalTitle } from "./styles";
-import { ProductType } from "@/pages/Home";
 
 import closeBtn from "../../assets/images/close.png"
 import { useState } from "react";

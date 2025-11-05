@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-import { colors } from "@/styles";
 import trash from "assets/images/trash.png"
+
+import { colors } from "@/styles";
 
 export const CartContainer = styled.div`
     height: 100%;
@@ -14,7 +15,7 @@ export const CartContainer = styled.div`
     display: none;
     justify-content: flex-end;
 
-    &.open {
+    &.is-open {
         display: flex;
     }
 `

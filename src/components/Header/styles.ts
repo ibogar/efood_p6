@@ -23,6 +23,10 @@ export const Text = styled.p<HeaderProps>`
     font-size: ${({$path}) => ($path === '/' ? '36px' : '18px')};
     font-weight: bold;
     margin-top: ${({$path}) => ($path === '/' ? '140px' : '0px')};
+
+    span {
+        cursor: pointer;
+    }
 `
 
 export const Hero = styled.div`

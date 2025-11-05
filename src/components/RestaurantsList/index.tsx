@@ -1,6 +1,5 @@
 import Restaurant from "components/Restaurant";
 import { List } from "./styles";
-import { RestaurantType } from "pages/Home";
 
 interface Props {
     restaurants: RestaurantType[]
