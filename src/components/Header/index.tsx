@@ -25,6 +25,12 @@ const Header = ({ capa, tipo, titulo}: Props) => {
             return accumulator += currentValue.quantity
         } , 0)
 
+    const disableOpenCart = () => {
+        if (sumQuantity() > 0) {
+            return dispatch(open())
+        }
+    }
+
     if (location.pathname === '/') {
         return (
             <S.Container $path={path}>
@@ -39,7 +45,7 @@ const Header = ({ capa, tipo, titulo}: Props) => {
                     <S.Text $path={path}>Restaurantes</S.Text>
                     <Logo src={logopng}></Logo>
                     <S.Text $path={path}>
-                        <span onClick={() => dispatch(open())}>
+                        <span className={sumQuantity() === 0 ? "disabled" : ""} onClick={disableOpenCart}>
                             {
                                 sumQuantity() === 0 ? "Nenhum produto no carrinho" 
                                 : sumQuantity() === 1 ? "1 produto no carrinho" 

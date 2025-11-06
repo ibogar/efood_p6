@@ -26,6 +26,10 @@ export const Text = styled.p<HeaderProps>`
 
     span {
         cursor: pointer;
+
+        &.disabled {
+            cursor: default;
+        }
     }
 `
 
