@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
 import ProductsList from "../../components/ProductsList";
 import { useGetSelectedRestaurantQuery } from "@/services/api";
-import Cart from "@/components/Cart";
+import Cart from "@/components/Sidebar/Cart";
+import Sidebar from "@/components/Sidebar";
 
 const Profile = () => {
 
@@ -20,7 +21,7 @@ const Profile = () => {
         <>
             <Header capa={restaurant.capa} tipo={capitalize(restaurant.tipo)} titulo={restaurant.titulo} />
             <ProductsList menu={restaurant.cardapio}/>
-            <Cart />
+            <Sidebar />
         </>
     )
 }

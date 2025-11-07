@@ -14,6 +14,7 @@ export const CartProduct = styled.div`
     padding: 8px;
     position: relative;
     margin-bottom: 16px;
+    color: ${colors.primary};
 
     img {
         width: 80px;

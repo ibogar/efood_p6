@@ -5,14 +5,13 @@ interface Props {
     nome: string
     foto: string
     descricao: string
-    onClick?: () => void
 }
 
 const Product = ({ nome, foto, descricao }: Props) => {
 
     const setDescription = (descricao: string) => {
-        if (descricao.length > 266) {
-            return descricao.slice(0, 263) + '...'
+        if (descricao.length > 250) {
+            return descricao.slice(0, 251) + '...'
         }
         return descricao
     }

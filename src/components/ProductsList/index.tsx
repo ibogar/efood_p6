@@ -5,7 +5,7 @@ import closeBtn from "../../assets/images/close.png"
 import { useState } from "react";
 import formatPrice from "@/utils/formatPrice";
 import { useDispatch } from "react-redux";
-import { add, open } from "@/store/reducers/cart";
+import { add, open, placeOrder } from "@/store/reducers/cart";
 
 interface Props {
     menu: ProductType[]
@@ -34,6 +34,7 @@ const ProductsList = ({ menu }: Props) => {
     const dispatch = useDispatch()
     const addToCart = (product: ProductType) => {
         dispatch(add(product))
+        dispatch(placeOrder('cart'))
         dispatch(open())
         closeModal()
     }
@@ -68,7 +69,7 @@ const ProductsList = ({ menu }: Props) => {
                             <ModalDescription>
                                 {modal.descricao}
 
-                                <p className="servings">Serve: {modal.porcao.length > 11? `de ${modal.porcao}` : `${modal.porcao}`} </p>
+                                <p className="servings">Serve: {modal.porcao.length > 11 ? `de ${modal.porcao}` : `${modal.porcao}`} </p>
                             </ModalDescription>
                             <ModalButton onClick={() => addToCart(modal)}>Adicionar ao carrinho - {formatPrice(modal.preco)}</ModalButton>
                         </div>

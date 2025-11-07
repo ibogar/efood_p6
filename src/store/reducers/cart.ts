@@ -1,18 +1,24 @@
 import { createSlice, PayloadAction} from "@reduxjs/toolkit"
+import { act } from "react"
 
 
 interface CartProduct extends ProductType {
     quantity: number
 }
 
+type CartMode = 'cart' | 'checkout' | 'form'
+
+
 interface CartState {
     items: CartProduct[]
     isOpen: boolean
+    currentMode: CartMode
 }
 
 const initialState: CartState = {
     items: [],
-    isOpen: false
+    isOpen: false,
+    currentMode: 'cart'
 }
 
 const cartSlice = createSlice({
@@ -33,12 +39,6 @@ const cartSlice = createSlice({
                 )
             }
         },
-        open: (state) => {
-            state.isOpen = true
-        },
-        close: (state) => {
-            state.isOpen = false
-        },
         remove: (state, action: PayloadAction<number>) => {
 
             const productOnCart = state.items.find((item) => item.id === action.payload)
@@ -49,10 +49,19 @@ const cartSlice = createSlice({
                 state.items = state.items.filter((item) => item.id !== action.payload) 
             }
             
+        },
+        open: (state) => {
+            state.isOpen = true
+        },
+        close: (state) => {
+            state.isOpen = false
+        },
+        placeOrder: (state, action: PayloadAction<CartMode>) => {
+            state.currentMode = action.payload
         }
     }
 })
 
 
-export const { add, open, close, remove } = cartSlice.actions
+export const { add, remove, open, close, placeOrder } = cartSlice.actions
 export default cartSlice.reducer
