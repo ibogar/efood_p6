@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { colors } from "@/styles"
 
 interface ButtonProps {
-    marginTop?: string
+    $marginTop?: string
 }
 
 export const SidebarContainer = styled.div`
@@ -61,7 +61,7 @@ export const SidebarButton = styled.button<ButtonProps>`
     background-color: ${colors.secondary};
     color: ${colors.primary};
     padding: 4px;
-    margin-top: ${(props) => props.marginTop || "16px" };
+    margin-top: ${(props) => props.$marginTop || "16px" };
     width: 100%;
     font-weight: bold;
     cursor: pointer;

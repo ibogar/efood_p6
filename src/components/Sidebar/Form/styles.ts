@@ -2,13 +2,13 @@ import { colors } from "@/styles";
 import styled from "styled-components";
 
 interface InputGroupProps {
-  maxWidth?: string
+  $maxWidth?: string
 }
 
 export const InputGroup = styled.div<InputGroupProps>`
   flex: auto;
 
-  max-width: ${(props) => props.maxWidth || 'auto'};
+  max-width: ${(props) => props.$maxWidth || 'auto'};
 
   label {
     font-size: 14px;

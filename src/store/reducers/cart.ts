@@ -6,19 +6,14 @@ interface CartProduct extends ProductType {
     quantity: number
 }
 
-type CartMode = 'cart' | 'checkout' | 'form'
-
-
 interface CartState {
     items: CartProduct[]
     isOpen: boolean
-    currentMode: CartMode
 }
 
 const initialState: CartState = {
     items: [],
-    isOpen: false,
-    currentMode: 'cart'
+    isOpen: false
 }
 
 const cartSlice = createSlice({
@@ -56,12 +51,12 @@ const cartSlice = createSlice({
         close: (state) => {
             state.isOpen = false
         },
-        placeOrder: (state, action: PayloadAction<CartMode>) => {
-            state.currentMode = action.payload
+        clear: (state) => {
+            state.items = []
         }
     }
 })
 
 
-export const { add, remove, open, close, placeOrder } = cartSlice.actions
+export const { add, remove, open, close, clear } = cartSlice.actions
 export default cartSlice.reducer

@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux"
 import closeBtn from "@/assets/images/close.png"
 
 import { RootReducer } from "@/store"
-import { close, placeOrder, remove } from "@/store/reducers/cart"
+import { close, remove } from "@/store/reducers/cart"
+import { changeMode } from "@/store/reducers/checkout"
+
 import formatPrice from "@/utils/formatPrice"
 
 import * as S from "./styles"
@@ -11,7 +13,8 @@ import { CLoseIcon, SidebarButton } from "../styles"
 
 const Cart = () => {
     const dispatch = useDispatch()
-    const { items, currentMode } = useSelector((state: RootReducer) => state.cart)
+    const { items } = useSelector((state: RootReducer) => state.cart)
+    const { currentMode } = useSelector((state: RootReducer) => state.checkout)
 
     const sumPrices = () => {
 
@@ -42,7 +45,7 @@ const Cart = () => {
                         <p>Valor total</p>
                         <span>{sumPrices()}</span>
                     </S.TotalValue>
-                    <SidebarButton onClick={() => dispatch(placeOrder('form'))}>Continuar para entrega</SidebarButton>
+                    <SidebarButton onClick={() => dispatch(changeMode('form'))}>Continuar para entrega</SidebarButton>
                 </>
             ): 
             <S.ErrorMessage>Carrinho vazio, adicione produtos para exibir aqui e prosseguir com seu pedido</S.ErrorMessage>
