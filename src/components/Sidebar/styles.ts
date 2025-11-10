@@ -36,15 +36,16 @@ export const Sidebar = styled.aside`
     max-width: 360px;
     width: 100%;
     z-index: 1;
-    padding: 32px 8px;
+    padding: 32px 8px 0 8px;
     color: ${colors.secondary};
     font-size: 14px;
+    overflow-y: auto;
 `
 
 export const CLoseIcon = styled.img`
     position: absolute;
     top: 8px;
-    right: 8px;
+    right: 24px;
     height: 16px;
     width: 16px;
     cursor: pointer;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import vector from '../../assets/images/vector.png';
 import { colors } from "../../styles";
+import { Link } from "react-router-dom";
 
 type HeaderProps = {
     $path: string
@@ -23,6 +24,11 @@ export const Text = styled.p<HeaderProps>`
     font-size: ${({$path}) => ($path === '/' ? '36px' : '18px')};
     font-weight: bold;
     margin-top: ${({$path}) => ($path === '/' ? '140px' : '0px')};
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 
     span {
         cursor: pointer;

@@ -19,7 +19,7 @@ const Cart = () => {
     const sumPrices = () => {
 
         const totalPrice = items.reduce((accumulator, currentValue) => {
-            return accumulator += currentValue.preco
+            return accumulator += currentValue.preco * currentValue.quantity
         } , 0)
 
         return formatPrice(totalPrice)
@@ -41,11 +41,13 @@ const Cart = () => {
                             <button onClick={() => dispatch(remove(i.id))}/>
                         </S.CartProduct>
                     ))}
-                    <S.TotalValue>
-                        <p>Valor total</p>
-                        <span>{sumPrices()}</span>
-                    </S.TotalValue>
-                    <SidebarButton onClick={() => dispatch(changeMode('form'))}>Continuar para entrega</SidebarButton>
+                    <S.CartFooter>
+                        <S.TotalValue> 
+                            <p>Valor total</p>
+                            <span>{sumPrices()}</span>
+                        </S.TotalValue>
+                        <SidebarButton onClick={() => dispatch(changeMode('form'))}>Continuar para entrega</SidebarButton>
+                    </S.CartFooter>
                 </>
             ): 
             <S.ErrorMessage>Carrinho vazio, adicione produtos para exibir aqui e prosseguir com seu pedido</S.ErrorMessage>

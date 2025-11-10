@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import logopng from "assets/images/logo.png";
 
@@ -25,7 +25,7 @@ const Header = ({ capa, tipo, titulo}: Props) => {
             return accumulator += currentValue.quantity
         } , 0)
 
-    const disableOpenCart = () => {
+    const openCart = () => {
         if (sumQuantity() > 0) {
             return dispatch(open())
         }
@@ -44,12 +44,16 @@ const Header = ({ capa, tipo, titulo}: Props) => {
         return (
             <>
                 <S.Container $path={path}>
-                    <S.Text $path={path}>Restaurantes</S.Text>
+                    <S.Text $path={path}>
+                        <Link to={"/"}>
+                            Restaurantes
+                        </Link>
+                    </S.Text>
                     <Logo to={"/"}>
                         <img src={logopng} alt="" />
                     </Logo>
                     <S.Text $path={path}>
-                        <span className={sumQuantity() === 0 ? "disabled" : ""} onClick={disableOpenCart}>
+                        <span className={sumQuantity() === 0 ? "disabled" : ""} onClick={openCart}>
                             {
                                 sumQuantity() === 0 ? "Nenhum produto no carrinho" 
                                 : sumQuantity() === 1 ? "1 produto no carrinho" 

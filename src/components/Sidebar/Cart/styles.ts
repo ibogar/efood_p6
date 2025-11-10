@@ -44,11 +44,19 @@ export const CartProduct = styled.div`
     }
 `
 
+export const CartFooter = styled.div`
+    background-color: ${colors.primary};
+    z-index: 1;
+    position: sticky;
+    bottom: 0;
+    padding-top: 16px;
+    padding-bottom: 32px;
+`
+
 export const TotalValue = styled.div`
     display: flex;
     justify-content: space-between;
     color: ${colors.secondary};
-    margin-top: 40px;
     font-weight: bold;
 `
 
