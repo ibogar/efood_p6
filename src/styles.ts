@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
+
+import logopng from 'assets/images/logo.png';
 
 export const colors = {
     primary: '#E66767',
@@ -29,6 +32,6 @@ export const GlobalCss = createGlobalStyle`
     }
 `
 
-export const Logo = styled.img`
+export const Logo = styled(Link)`
     width: 125px;
 `

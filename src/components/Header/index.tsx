@@ -34,7 +34,9 @@ const Header = ({ capa, tipo, titulo}: Props) => {
     if (location.pathname === '/') {
         return (
             <S.Container $path={path}>
-                <Logo src={logopng}></Logo>
+                <Logo to={"/"}>
+                    <img src={logopng} alt="" />
+                </Logo>
                 <S.Text $path={path}>Viva experiências gastronômicas <br/> no conforto da sua casa</S.Text>
             </S.Container>
         ) 
@@ -43,7 +45,9 @@ const Header = ({ capa, tipo, titulo}: Props) => {
             <>
                 <S.Container $path={path}>
                     <S.Text $path={path}>Restaurantes</S.Text>
-                    <Logo src={logopng}></Logo>
+                    <Logo to={"/"}>
+                        <img src={logopng} alt="" />
+                    </Logo>
                     <S.Text $path={path}>
                         <span className={sumQuantity() === 0 ? "disabled" : ""} onClick={disableOpenCart}>
                             {
