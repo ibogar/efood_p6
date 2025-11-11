@@ -5,6 +5,8 @@ import Sidebar from '@/components/Sidebar'
 import ProductsList from '@/components/ProductsList'
 
 import { useGetSelectedRestaurantQuery } from '@/services/api'
+import { ClockLoader } from 'react-spinners'
+import { colors } from '@/styles'
 
 const Profile = () => {
 
@@ -14,7 +16,11 @@ const Profile = () => {
         str ? str[0].toUpperCase() + str.slice(1).toLowerCase() : "";
 
     if (!restaurant) {
-        return <p>Carregando</p>
+        return (
+            <div className='center-loader'>
+                <ClockLoader color={colors.primary} size={240}/>
+            </div>
+        )
     }
 
     return (

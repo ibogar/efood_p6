@@ -33,6 +33,13 @@ export const GlobalCss = createGlobalStyle`
         width: 100%;
         margin: 0 auto;
     }
+
+    .center-loader {
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 export const Logo = styled(Link)`

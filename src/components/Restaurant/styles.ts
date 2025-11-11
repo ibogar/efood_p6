@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import { colors } from '@/styles'
 
-export const Card = styled.div`
+export const Card = styled(Link)`
     background-color: ${colors.white};
     color: ${colors.primary};
     border: 1px solid ${colors.primary};
     font-size: 14px;
     position: relative;
+    text-decoration: none;
 `
 
 export const CardContainer = styled.div`

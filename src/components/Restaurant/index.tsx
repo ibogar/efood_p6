@@ -22,7 +22,7 @@ const Restaurant = ({ id, titulo, destacado, tipo, avaliacao, descricao, capa}: 
     }
 
     return (
-        <S.Card>
+        <S.Card to={`/profile/${id}`}>
             <S.Image src={capa} />
             <S.Tags>
                 {destacado && (
