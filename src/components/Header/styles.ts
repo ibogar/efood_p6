@@ -1,8 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import vector from '../../assets/images/vector.png';
-import { colors } from "../../styles";
-import { Link } from "react-router-dom";
+import vector from '@/assets/images/vector.png'
+import { colors } from '@/styles'
 
 type HeaderProps = {
     $path: string

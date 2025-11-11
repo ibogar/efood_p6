@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useFormik } from "formik"
-import * as Yup from "yup"
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
-import { RootReducer } from "@/store"
-import { changeMode, setOrder } from "@/store/reducers/checkout"
+import { RootReducer } from '@/store'
+import { changeMode, setOrder } from '@/store/reducers/checkout'
 
-import { usePurchaseMutation } from "@/services/api"
+import { usePurchaseMutation } from '@/services/api'
 
-import formatPrice from "@/utils/formatPrice"
-import { cardNumberMask, lettersOnlyMask, numbersOnlyMask, postalCodeMask } from "@/utils/masks"
+import formatPrice from '@/utils/formatPrice'
+import { cardNumberMask, lettersOnlyMask, numbersOnlyMask, postalCodeMask } from '@/utils/masks'
 
-import { InputGroup, Row } from "./styles"
-import { SidebarButton, Title } from "../styles"
+import { InputGroup, Row } from './styles'
+import { SidebarButton, Title } from '../styles'
 
 const Form = () => {
     const dispatch = useDispatch()

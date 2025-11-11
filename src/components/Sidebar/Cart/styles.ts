@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import trash from "assets/images/trash.png"
+import trash from '@/assets/images/trash.png'
 
-import { colors } from "@/styles";
+import { colors } from '@/styles'
 
 
     

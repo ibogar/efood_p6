@@ -1,12 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
-import logopng from "assets/images/logo.png";
+import logopng from '@/assets/images/logo.png'
 
-import * as S from "./styles";
-import { Logo } from "@/styles";
-import { useDispatch, useSelector } from "react-redux";
-import { RootReducer } from "@/store";
-import { open } from "@/store/reducers/cart";
+import { RootReducer } from '@/store'
+import { open } from '@/store/reducers/cart'
+
+import * as S from './styles'
+import { Logo } from '@/styles'
 
 interface Props {
     capa?: string

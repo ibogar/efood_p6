@@ -1,7 +1,7 @@
-import RestaurantsList from "components/RestaurantsList";
-import Header from "@/components/Header";
+import RestaurantsList from '@/components/RestaurantsList'
+import Header from '@/components/Header'
 
-import { useGetRestaurantsQuery } from "@/services/api";
+import { useGetRestaurantsQuery } from '@/services/api'
 
 
 const Home = () => {

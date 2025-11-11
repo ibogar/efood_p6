@@ -1,12 +1,14 @@
-import Product from "../Product";
-import { List, ModalButton, ModalCLose, ModalContainer, ModalContent, ModalDescription, ModalImage, ModalTitle } from "./styles";
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-import closeBtn from "../../assets/images/close.png"
-import { useState } from "react";
-import formatPrice from "@/utils/formatPrice";
-import { useDispatch } from "react-redux";
-import { add, open } from "@/store/reducers/cart";
-import { changeMode } from "@/store/reducers/checkout"
+import Product from '../Product'
+
+import closeBtn from '@/assets/images/close.png'
+import formatPrice from '@/utils/formatPrice'
+import { add, open } from '@/store/reducers/cart'
+import { changeMode } from '@/store/reducers/checkout'
+
+import * as S from './styles'
 
 interface Props {
     menu: ProductType[]
@@ -42,7 +44,7 @@ const ProductsList = ({ menu }: Props) => {
 
     return  (
         <div className="container">
-            <List>
+            <S.List>
                 {menu.map((i) => (
                     <li key={i.id} onClick={() => setModal({
                         foto: i.foto,
@@ -59,24 +61,24 @@ const ProductsList = ({ menu }: Props) => {
                             descricao={i.descricao}
                         /> 
                     </li>))}
-            </List>
+            </S.List>
             {modal && (
-                <ModalContainer className={modal.isVisible ? "visible" : ""}>
-                    <ModalContent className="container">
-                        <ModalCLose onClick={() => closeModal()} src={closeBtn} />
-                        <ModalImage src={modal.foto}/>
+                <S.ModalContainer className={modal.isVisible ? "visible" : ""}>
+                    <S.ModalContent className="container">
+                        <S.ModalCLose onClick={() => closeModal()} src={closeBtn} />
+                        <S.ModalImage src={modal.foto}/>
                         <div>
-                            <ModalTitle>{modal.nome}</ModalTitle>
-                            <ModalDescription>
+                            <S.ModalTitle>{modal.nome}</S.ModalTitle>
+                            <S.ModalDescription>
                                 {modal.descricao}
 
                                 <p className="servings">Serve: {modal.porcao.length > 11 ? `de ${modal.porcao}` : `${modal.porcao}`} </p>
-                            </ModalDescription>
-                            <ModalButton onClick={() => addToCart(modal)}>Adicionar ao carrinho - {formatPrice(modal.preco)}</ModalButton>
+                            </S.ModalDescription>
+                            <S.ModalButton onClick={() => addToCart(modal)}>Adicionar ao carrinho - {formatPrice(modal.preco)}</S.ModalButton>
                         </div>
-                    </ModalContent>
+                    </S.ModalContent>
                     <div onClick={() => closeModal()} className="overlay"></div>
-                </ModalContainer>
+                </S.ModalContainer>
             )}
         </div>
     )

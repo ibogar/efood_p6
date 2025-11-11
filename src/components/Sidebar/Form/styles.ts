@@ -1,5 +1,5 @@
-import { colors } from "@/styles";
-import styled from "styled-components";
+import { colors } from '@/styles'
+import styled from 'styled-components'
 
 interface InputGroupProps {
   $maxWidth?: string

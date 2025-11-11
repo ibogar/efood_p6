@@ -1,11 +1,12 @@
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-import { GlobalCss } from "./styles";
+import MyRoutes from './routes'
 
-import MyRoutes from "./routes"
-import Footer from "./components/Footer";
-import { store } from "./store"
+import Footer from './components/Footer'
+import { store } from './store'
+
+import { GlobalCss } from './styles'
 
 const App = () => (
   <Provider store={store}>

@@ -1,5 +1,6 @@
-import * as S from "./styles";
-import star from "assets/images/star.png"
+import star from '@/assets/images/star.png'
+
+import * as S from './styles'
 
 interface Props {
     id: number

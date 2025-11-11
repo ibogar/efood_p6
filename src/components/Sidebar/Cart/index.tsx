@@ -1,15 +1,15 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from 'react-redux'
 
-import closeBtn from "@/assets/images/close.png"
+import closeBtn from '@/assets/images/close.png'
 
-import { RootReducer } from "@/store"
-import { close, remove } from "@/store/reducers/cart"
-import { changeMode } from "@/store/reducers/checkout"
+import { RootReducer } from '@/store'
+import { close, remove } from '@/store/reducers/cart'
+import { changeMode } from '@/store/reducers/checkout'
 
-import formatPrice from "@/utils/formatPrice"
+import formatPrice from '@/utils/formatPrice'
 
-import * as S from "./styles"
-import { CLoseIcon, SidebarButton } from "../styles"
+import * as S from './styles'
+import { CLoseIcon, SidebarButton } from '../styles'
 
 const Cart = () => {
     const dispatch = useDispatch()

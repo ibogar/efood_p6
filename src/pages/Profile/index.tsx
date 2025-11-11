@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 
-import Header from "@/components/Header";
-import ProductsList from "../../components/ProductsList";
-import { useGetSelectedRestaurantQuery } from "@/services/api";
-import Cart from "@/components/Sidebar/Cart";
-import Sidebar from "@/components/Sidebar";
+import Header from '@/components/Header'
+import Sidebar from '@/components/Sidebar'
+import ProductsList from '@/components/ProductsList'
+
+import { useGetSelectedRestaurantQuery } from '@/services/api'
 
 const Profile = () => {
 

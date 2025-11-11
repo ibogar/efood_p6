@@ -1,14 +1,14 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from 'react-redux'
 
-import Cart from "./Cart"
-import Checkout from "./Checkout"
-import Form from "./Form"
+import Cart from './Cart'
+import Checkout from './Checkout'
+import Form from './Form'
 
-import { RootReducer } from "@/store"
-import { clear, close } from "@/store/reducers/cart"
-import { changeMode } from "@/store/reducers/checkout"
+import { RootReducer } from '@/store'
+import { clear, close } from '@/store/reducers/cart'
+import { changeMode } from '@/store/reducers/checkout'
 
-import * as S from "./styles"
+import * as S from './styles'
 
 
 

@@ -1,5 +1,4 @@
 import * as S from "./styles";
-import pizza from "assets/images/pizza.png"
 
 interface Props {
     nome: string

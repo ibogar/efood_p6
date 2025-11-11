@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux'
 
-import { RootReducer } from "@/store";
-import { clear, close } from "@/store/reducers/cart";
-import { changeMode } from "@/store/reducers/checkout";
+import { RootReducer } from '@/store'
+import { clear, close } from '@/store/reducers/cart'
+import { changeMode } from '@/store/reducers/checkout'
 
-import { Text } from "./styles";
-import { SidebarButton, Title } from "../styles";
+import { Text } from './styles'
+import { SidebarButton, Title } from '../styles'
 
 
 const Checkout = () => {

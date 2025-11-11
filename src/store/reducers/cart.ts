@@ -1,5 +1,4 @@
-import { createSlice, PayloadAction} from "@reduxjs/toolkit"
-import { act } from "react"
+import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 
 interface CartProduct extends ProductType {
