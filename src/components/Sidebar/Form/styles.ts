@@ -18,16 +18,18 @@ export const InputGroup = styled.div<InputGroupProps>`
 
   input {
     background-color: ${colors.secondary};
-    border: 1px solid ${colors.secondary};
+    border: 2px solid ${colors.secondary};
     height: 32px;
     margin: 8px 0;
     padding: 0 8px;
     width: 100%;
+
+    &.error {
+      border: 2px solid red;
+      outline: 1px solid rgba(0, 0, 0, 0.2);
+    }
 }
 
-  &.error {
-    border: 1px solid red;
-  }
 `
 
 export const Row = styled.div`

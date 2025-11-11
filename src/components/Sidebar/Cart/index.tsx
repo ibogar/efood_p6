@@ -14,7 +14,6 @@ import { CLoseIcon, SidebarButton } from "../styles"
 const Cart = () => {
     const dispatch = useDispatch()
     const { items } = useSelector((state: RootReducer) => state.cart)
-    const { currentMode } = useSelector((state: RootReducer) => state.checkout)
 
     const sumPrices = () => {
 
