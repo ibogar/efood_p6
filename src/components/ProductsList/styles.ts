@@ -1,11 +1,17 @@
 import styled from 'styled-components'
 
-import { colors } from '@/styles'
+import { breakpoints, colors } from '@/styles'
 
 export const List = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
+    padding: 0 20px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+            grid-template-columns: 1fr;
+            
+        }
 
 `
 
@@ -32,8 +38,12 @@ export const ModalContainer = styled.div`
         top: 0;
         left: 0;
     }
-`
 
+    @media (max-width: ${breakpoints.tablet}) {
+        align-items: flex-start;
+    }
+`
+ 
 export const ModalContent = styled.div`
     width: 100%;
     height: 344px;
@@ -49,6 +59,14 @@ export const ModalContent = styled.div`
 
     div {
         flex-direction: column;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        flex-direction: column;
+        margin: 80px 20px;
+        padding: 16px;
+        height: 80vh;
+        align-items: center;
     }
 `
 
@@ -66,6 +84,13 @@ export const ModalImage = styled.img`
     height: 280px;
     object-fit: cover;
     margin-right: 24px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 12px;
+        margin-right: 0;
+    }
 `
 
 export const ModalTitle = styled.h3`
@@ -79,6 +104,11 @@ export const ModalDescription = styled.div`
 
     .servings {
         margin-top: 24px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        height: 220px;
+        overflow-y: auto;
     }
 `
 

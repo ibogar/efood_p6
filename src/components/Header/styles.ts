@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import vector from '@/assets/images/vector.png'
-import { colors } from '@/styles'
+import { breakpoints, colors } from '@/styles'
 
 type HeaderProps = {
     $path: string
@@ -16,8 +16,17 @@ export const Container = styled.div<HeaderProps>`
     justify-content: ${({$path}) => ($path === '/' ? 'center' : 'space-between')};
     align-items: center;
     text-align: center;
-    margin-bottom: ${({$path}) => ($path === '/' ? '80px' : '0px')};
+    margin-bottom: ${({$path}) => ($path === '/' ? '80px' : '0')};
     padding: 0 168px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        height: ${({$path}) => ($path === '/' ? '240px' : '186px')};;
+        margin-bottom: ${({$path}) => ($path === '/' ? '20px' : '0')};
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px;
+    }
 `
 export const Text = styled.p<HeaderProps>`
     font-size: ${({$path}) => ($path === '/' ? '36px' : '18px')};
@@ -36,6 +45,12 @@ export const Text = styled.p<HeaderProps>`
             cursor: default;
         }
     }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        font-size: 18px;
+        margin-top: 0;
+        order: 2;
+    }
 `
 
 export const Hero = styled.div`
@@ -44,7 +59,11 @@ export const Hero = styled.div`
     background-size: cover;
     margin-bottom: 56px;
     background-position: center;
-    color: ${colors.white}
+    color: ${colors.white};
+
+    @media (max-width: ${breakpoints.desktop}) {
+        text-align: center;
+    }
 `
 
 export const BackgroundMask = styled.div`

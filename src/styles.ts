@@ -9,6 +9,11 @@ export const colors = {
     overlay: 'rgba(0, 0, 0, 0.8)'
 }
 
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 export const GlobalCss = createGlobalStyle`
     * {
         margin: 0;
@@ -32,4 +37,12 @@ export const GlobalCss = createGlobalStyle`
 
 export const Logo = styled(Link)`
     width: 125px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        order: 1;
+
+        img {
+            margin-bottom: 16px;
+        }
+    }
 `
