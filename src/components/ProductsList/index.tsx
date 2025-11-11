@@ -66,7 +66,7 @@ const ProductsList = ({ menu }: Props) => {
                 <S.ModalContainer className={modal.isVisible ? "visible" : ""}>
                     <S.ModalContent className="container">
                         <S.ModalCLose onClick={() => closeModal()} src={closeBtn} />
-                        <S.ModalImage src={modal.foto}/>
+                        {modal.foto && <S.ModalImage src={modal.foto} />}
                         <div>
                             <S.ModalTitle>{modal.nome}</S.ModalTitle>
                             <S.ModalDescription>
